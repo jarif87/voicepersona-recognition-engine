@@ -2,6 +2,8 @@
 
 The **VoicePersona Recognition Engine** is a FastAPI-based web application that predicts gender ("Male" or "Female") from voice features using a pre-trained Random Forest model. The app features a modern, user-friendly interface with rounded text input fields for five key features: `meanfun`, `IQR`, `Q25`, `sd`, and `sp.ent`. It is designed with a unique purple-teal gradient background and a sleek, responsive layout.
 
+![](images/image.png)
+
 ## Features
 - **Input Form**: Text inputs for voice features with HTML5 validation for the following ranges:
   - `meanfun`: 0.055565–0.237636
