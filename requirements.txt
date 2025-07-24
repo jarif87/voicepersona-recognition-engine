@@ -1,0 +1,6 @@
+fastapi==0.115.13
+catboost==1.2.8
+numpy==1.26.4
+uvicorn
+Jinja2==3.1.6
+python-multipart

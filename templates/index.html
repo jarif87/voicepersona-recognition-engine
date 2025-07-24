@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gender Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gender Prediction from Voice Features</h1>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="meanfun">Mean Fundamental Frequency (meanfun)</label>
+                <input type="number" id="meanfun" name="meanfun" step="0.000001" min="0.055565" max="0.237636" value="0.1" required>
+                <small>Range: 0.055565–0.237636</small>
+            </div>
+            <div class="form-group">
+                <label for="IQR">Interquartile Range (IQR)</label>
+                <input type="number" id="IQR" name="IQR" step="0.000001" min="0.014558" max="0.252225" value="0.07" required>
+                <small>Range: 0.014558–0.252225</small>
+            </div>
+            <div class="form-group">
+                <label for="Q25">First Quartile (Q25)</label>
+                <input type="number" id="Q25" name="Q25" step="0.000001" min="0.000229" max="0.247347" value="0.02" required>
+                <small>Range: 0.000229–0.247347</small>
+            </div>
+            <div class="form-group">
+                <label for="sd">Standard Deviation (sd)</label>
+                <input type="number" id="sd" name="sd" step="0.000001" min="0.018363" max="0.115273" value="0.06" required>
+                <small>Range: 0.018363–0.115273</small>
+            </div>
+            <div class="form-group">
+                <label for="sp.ent">Spectral Entropy (sp.ent)</label>
+                <input type="number" id="sp.ent" name="sp.ent" step="0.000001" min="0.738651" max="0.981997" value="0.89" required>
+                <small>Range: 0.738651–0.981997</small>
+            </div>
+            <button type="submit">Predict Gender</button>
+        </form>
+        {% if prediction %}
+        <div class="result success">
+            <h2>Prediction: {{ prediction }}</h2>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
